@@ -4,6 +4,7 @@ import { Kanit, Permanent_Marker } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
+import MasterpieceCarousel from "@/components/masterpieceCarousel";
 
 const kanit = Kanit({
   weight: "600",
@@ -19,13 +20,13 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center lg:pt-24 pt-10">
       {/* Welcome Heading DIV */}
-      <div
+      <section
         className={cn(
           "flex items-center justify-center w-[100%] py-4",
           kanit.className
         )}
       >
-        <div className="flex flex-col lg:max-w-[700px] max-w-[500px] ">
+        <div className="flex flex-col lg:max-w-[700px] max-w-[500px]">
           <div className={kanit.className}>
             <p className="text-center lg:text-7xl md:text-5xl text-3xl">
               We Put You In the
@@ -41,10 +42,10 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Engagement and Push to Portfolio */}
-      <div className=" items-center justify-center w-[100%] p-4 h-[16rem]">
+      <section className="w-[100%] p-4 h-[16rem]">
         <div className="grid lg:grid-cols-6 md:grid-cols-5 grid-cols-3 gap-3 h-28">
           <div className="border rounded-lg md:col-span-2 col-span-1 h-28">
             01
@@ -82,9 +83,27 @@ export default function Home() {
             06
           </div>
         </div>
-      </div>
+      </section>
 
-      {/*Out Best MasterPiece */}
+      {/*Our Best MasterPiece */}
+
+      <section className="flex flex-col justify-center w-[100%] px-4 py-[5rem]">
+        <div className="flex items-center justify-center w-[100%] py-4 ">
+          <div
+            className={cn("lg:max-w-[500px] md:max-w-[300px] max-w-[200px]")}
+          >
+            <p className="text-center lg:text-5xl md:text-3xl text-xl">
+              OUR BEST MASTERPIECE.
+            </p>
+          </div>
+        </div>
+        <div className="flex justify-center w-[100%] p-8">
+          <MasterpieceCarousel />
+        </div>
+      </section>
+
+      {/*TODO: Services Section*/}
+      <section id="service"></section>
     </main>
   );
 }
