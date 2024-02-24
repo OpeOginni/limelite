@@ -5,8 +5,9 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
-import { MenuIcon } from "lucide-react";
+import { CrossIcon, MenuIcon, XIcon } from "lucide-react";
 import BookNowButton from "./bookNowButton";
 import { HeaderNav, HeaderNavMobile } from "./headerNav";
 import Image from "next/image";
@@ -36,7 +37,24 @@ export default function MainHeader() {
               <MenuIcon />
             </SheetTrigger>
             <SheetContent>
-              <MobileNav />
+              <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div className="flex items-center justify-between">
+                  <a href="#" className="-m-1.5 p-1.5">
+                    <span className="sr-only">Your Company</span>
+                    <Image
+                      className="h-8 w-auto"
+                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                      alt=""
+                      width={0}
+                      height={0}
+                    />
+                  </a>
+                  <SheetClose>
+                    <XIcon />
+                  </SheetClose>
+                </div>
+                <MobileNav />
+              </div>
             </SheetContent>
           </Sheet>
         </div>
@@ -53,27 +71,13 @@ export default function MainHeader() {
 
 function MobileNav() {
   return (
-    <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-      <div className="flex items-center justify-between">
-        <a href="#" className="-m-1.5 p-1.5">
-          <span className="sr-only">Your Company</span>
-          <Image
-            className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt=""
-            width={0}
-            height={0}
-          />
-        </a>
-      </div>
-      <div className="mt-6 flow-root">
-        <div className="-my-6 divide-y divide-gray-500/10">
-          <div className="space-y-2 py-6">
-            <HeaderNavMobile />
-          </div>
-          <div className="py-6">
-            <BookNowButton />
-          </div>
+    <div className="mt-6 flow-root">
+      <div className="-my-6 divide-y divide-gray-500/10">
+        <div className="space-y-2 py-6">
+          <HeaderNavMobile />
+        </div>
+        <div className="py-6">
+          <BookNowButton />
         </div>
       </div>
     </div>

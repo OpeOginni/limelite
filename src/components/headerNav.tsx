@@ -44,7 +44,7 @@ export function HeaderNav() {
           className={cn(
             "text-sm font-semibold leading-6 py-1 px-2 rounded-md",
             pathName == navLink.href
-              ? "text-white bg-amber-600"
+              ? "text-amber-600"
               : "text-gray-900  hover:bg-gray-200"
           )}
         >
@@ -67,7 +67,7 @@ export function HeaderNavMobile() {
           className={cn(
             "-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ",
             pathName == navLink.href
-              ? "text-white bg-amber-600"
+              ? "text-amber-600"
               : "text-gray-900  hover:bg-gray-50"
           )}
         >
