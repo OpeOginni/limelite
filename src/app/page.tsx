@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import MasterpieceCarousel from "@/components/masterpieceCarousel";
+import ServiceSection from "@/components/servicesSection";
+import Footer from "@/components/footer";
 
 const kanit = Kanit({
   weight: "600",
@@ -103,7 +105,12 @@ export default function Home() {
       </section>
 
       {/*TODO: Services Section*/}
-      <section id="service"></section>
+      <section id="service" className="flex justify-center w-[100%] px-4">
+        <ServiceSection />
+      </section>
+      <section className="flex justify-center w-[100%] px-4 pt-12">
+        <Footer />
+      </section>
     </main>
   );
 }
